@@ -50,7 +50,3 @@ print("Saved in Pickle!")
 # Claculating the Accuracy
 # accuracy = nltk.classify.util.accuracy(classifier, testing_list)
 # print("Classifier Accuracy:", accuracy*100)
-# Displaying the most informative features
-# classifier.show_most_informative_features()
-# Testing the classified classifier
-# print(classifier.classify(toDict(cleanEmail(("This is primary")))))

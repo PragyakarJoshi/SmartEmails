@@ -12,14 +12,11 @@ def sentenceTokenizer(email):
 
 def punctuationFilter(email_tokens):
     no_punctuations = [word for word in email_tokens if word.isalpha()]
-    # print("Punctuations Removed!\n")
     return no_punctuations
 
 def stopWordsFilter(punctuation_rem_words):
     stop_words = set(stopwords.words('english'))
-
     no_stop_words = [word for word in punctuation_rem_words if not word in stop_words]
-    # print("Stop Words Removed!\n")
     return no_stop_words
 
 def cleanEmail(email):

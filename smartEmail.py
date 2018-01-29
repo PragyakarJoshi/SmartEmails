@@ -1,5 +1,6 @@
 import pickle
 from emailFilter import cleanEmail, toDict
+from planDetector import detectPlan
 
 def emailClassifier(email):
     f = open('data/trained_data.pickle','rb')
@@ -8,8 +9,7 @@ def emailClassifier(email):
     result = classifier.classify(toDict(cleanEmail(email)))
     return result
 
-f = open('data/email.txt','rt')
-email_content = f.read()
-f.close()
-
-print(emailClassifier(email_content))
+def reminder(email):
+    rem = detectPlan(email)
+    print(rem)
+    return rem
