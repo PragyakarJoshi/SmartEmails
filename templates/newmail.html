@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>New Email</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+  <div class="container">
+    <br>
+    <h3>New Email</h3>
+    <br>
+    <form action="/addmail/" method="POST">
+      <div class="form-group">
+        <input type="email" name="sender" class="form-control" placeholder="Email">
+      </div>
+      <div class="form-group">
+        <input type="subject" name="subject" class="form-control" placeholder="Subject">
+      </div>
+      <div class="form-group">
+        <textarea name="content" class="form-control" cols="30" rows="15" style="resize:none;"></textarea>
+      </div>
+      <div class="form-group text-right">
+        <input type="submit" name="content" value="Add" class="btn btn-primary" style="width:150px;">
+      </div>
+    </form>
+    <div class="container">
+      <br>
+      <hr>
+      <p>Copyright &copy; 2018 - Pragyakar Joshi - 15042998</p>
+      <br>
+    </div>
+  </div>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</body>
+
+</html>

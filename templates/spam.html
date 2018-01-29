@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Spam - Smart Email Application</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+  <br>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+        <p class="h1">Smart Inbox</p>
+      </div>
+      <div class="col-sm-4 col-sm-offset-4 text-right">
+        <br>
+        <a href="/newmail/" class="btn btn-primary"> New Email </a>
+      </div>
+    </div>
+    <br>
+    <br>
+    <div class="">
+
+      <ul class="nav nav-pills nav-justified">
+        <li><a href="/">All Emails</a></li>
+        <li><a href="/primary/">Primary</a></li>
+        <li><a href="/social/">Social</a></li>
+        <li><a href="/updates/">Updates</a></li>
+        <li><a href="/promotion/">Promotion</a></li>
+        <li class="active"><a href="/spam/">Spam</a></li>
+      </ul>
+    </div>
+    <br>
+    <div class="container">
+      <h3 class="text-center">SPAM</h3>
+      <br>
+      <table class="table table-striped">
+        <tr>
+          <th>Subject</th>
+          <th>Sender</th>
+          <th>Action</th>
+        </tr>
+        {% for email in emails %}
+        <tr>
+        <td>{{email.subject}}</td>
+        <td>{{email.sender}}</td>
+        <td><a href="/readmail/{{email.id}}">View Email</a></td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <br>
+    <hr>
+    <br>
+    <p>Copyright &copy; 2018 - Pragyakar Joshi - 15042998</p>
+  </div>
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</body>
+
+</html>
