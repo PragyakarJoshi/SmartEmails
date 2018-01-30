@@ -6,56 +6,67 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Social - Smart Email Application</title>
-
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-
+  <link rel="stylesheet" href="{{url_for('static', filename='bootstrap.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
 </head>
 
 <body>
-  <br>
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-4">
-        <p class="h1">Smart Inbox</p>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">SmartInbox</a>
       </div>
-      <div class="col-sm-4 col-sm-offset-4 text-right">
-        <br>
-        <a href="/newmail/" class="btn btn-primary"> New Email </a>
-      </div>
-    </div>
-    <br>
-    <br>
-    <div class="">
 
-      <ul class="nav nav-pills nav-justified">
-        <li><a href="/">All Emails</a></li>
-        <li><a href="/primary/">Primary</a></li>
-        <li class="active"><a href="/social/">Social</a></li>
-        <li><a href="/updates/">Updates</a></li>
-        <li><a href="/promotion/">Promotion</a></li>
-        <li><a href="/spam/">Spam</a></li>
-      </ul>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="/">Home </a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/newmail/" class="btn btn-link"> New Email </a></li>
+        </ul>
+      </div>
     </div>
-    <br>
-    <div class="container">
-      <h3 class="text-center">SOCIAL</h3>
-      <br>
-      <table class="table table-striped">
-        <tr>
-          <th>Subject</th>
-          <th>Sender</th>
-          <th>Action</th>
-        </tr>
-        {% for email in emails %}
-        <tr>
-        <td>{{email.subject}}</td>
-        <td>{{email.sender}}</td>
-        <td><a href="/readmail/{{email.id}}">View Email</a></td>
-        </tr>
-        {% endfor %}
-      </table>
+  </nav>
+  <br>
+  <br>
+  <br>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-2">
+        <br>
+        <div class="btn-group-vertical btn-side-nav">
+            <a href="/" class="btn btn-default ">All Emails</a>
+            <a href="/primary/" class="btn btn-default">Primary</a>
+            <a href="/social/" class="btn btn-default active">Social</a>
+            <a href="/promotion/" class="btn btn-default">Promotion</a>
+            <a href="/updates/" class="btn btn-default">Updates</a>
+            <a href="/spam/" class="btn btn-default">Spam</a>
+        </div>
+      </div>
+      <div class="col-sm-10">
+        <h3>SOCIAL</h3>
+        <br>
+        <table class="table table-striped">
+          <tr>
+            <th>Subject</th>
+            <th>Sender</th>
+            <th>Action</th>
+          </tr>
+            {% for email in emails %}
+            <tr>
+            <td>{{email.subject}}</td>
+            <td>{{email.sender}}</td>
+            <td><a href="/readmail/{{email.id}}">View Email</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+      </div>
     </div>
   </div>
 

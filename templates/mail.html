@@ -6,34 +6,44 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Mail - Smart Email Application</title>
-
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-
+  <link rel="stylesheet" href="{{url_for('static', filename='bootstrap.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
 </head>
 
 <body>
-  <br>
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-4">
-        <p class="h1">Smart Inbox</p>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">SmartInbox</a>
       </div>
-      <div class="col-sm-4 col-sm-offset-4 text-right">
-        <br>
-        <a href="/newmail/" class="btn btn-primary"> New Email </a>
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="/">Home </a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/newmail/" class="btn btn-link"> New Email </a></li>
+        </ul>
       </div>
     </div>
-    <br>
-    <br>
+  </nav>
+  <br>
+  <br>
+  <br>
+  <div class="container">
     <div class="container">
       {% for mail in mails %}
-      <h4>From: {{ mail.sender }}</h4>
-      <h4>Subject: {{ mail.subject }}</h4>
-      <h4>Mail Type: {{ mail.category }}</h4>
-      <br>
-      <p>{{ mail.content }}</p>
+        <h3>From: {{ mail.sender }}</h3>
+        <h3>Subject: {{ mail.subject }}</h3>
+        <h4>Mail Type: {{ mail.category }}</h4>
+        <br>
+        <p>{{ mail.content }}</p>
       {% endfor %}
     </div>
 
