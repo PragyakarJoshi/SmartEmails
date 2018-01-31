@@ -11,3 +11,5 @@
 <p>Recieved Emails are added to respective category pages.</p>
 <img src="samples/planner-sample.png" width="70%" align="middle" />
 <p>An option to add a reminder is displayed when events/plans are detected in the email content.</p>
+
+<p>Web Application made with Flask</p>
